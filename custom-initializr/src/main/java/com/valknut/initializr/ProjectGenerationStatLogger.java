@@ -23,9 +23,11 @@ import io.spring.initializr.actuate.stat.ProjectRequestDocumentFactory;
 import io.spring.initializr.web.project.ProjectRequestEvent;
 
 /**
- * Publish stats for each project generated to an Elastic index.
+ * Log stats for each generated project, and keep an ongoing counter of generated projects.
+ * 
+ * Count can be found in /usr/local/inet/logs/initializr-total-generated.txt, directory must already exist.
  *
- * @author Stephane Nicoll
+ * @author Randolph Nimmer, Stephane Nicoll
  */
 @Component
 public class ProjectGenerationStatLogger

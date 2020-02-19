@@ -1,0 +1,50 @@
+initializr:
+  javaVersions:
+    - id: 11
+      default: false
+    - id: 1.8
+      default: true
+  languages:
+    - name: Java
+      id: java
+      default: true
+  packagings:
+    - name: Jar
+      id: jar
+      default: true
+    - name: War
+      id: war
+      default: false
+  group-id:
+    value: com.valknut
+  artifact-id:
+    value: new-app
+  version:
+    value: 1.0.0-SNAPSHOT
+  description:
+    value: A new app
+  package-name:
+    value: com.valknut.new_app
+  name:
+    value: new-app
+  types:
+    - name: Maven Project
+      id: maven-project
+      description: Generate a Maven based project archive
+      tags:
+        build: maven
+        format: project
+      default: true
+      action: /starter.zip
+spring:
+  jmx:
+    enabled: true
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+logging:
+  level:
+    io.spring.initializr.actuate.stat: debug
+    com.valknut.initializr.ProjectGenerationStatLogger: debug
